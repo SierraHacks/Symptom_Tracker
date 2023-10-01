@@ -43,45 +43,11 @@
         <input type="text" id="weight" name="weight"><br><br>
 
         <label for="Symptoms">What symptoms do you have?</label>
-        <input type="text" id="Symptoms" name="symptoms1"><br><br>
-        <input type="text" id="Symptoms" name="symptoms2"><br><br>
-        <input type="text" id="Symptoms" name="symptoms3"><br><br>
-        <button type="button" onclick="getUserDetails()">Submit</button>
+        <input type="text" id="symptom1" class="symptoms"><br><br>
+        <input type="text" id="symptom2" class="symptoms"><br><br>
+        <input type="text" id="symptom3" class="symptoms"><br><br>
+        <button type="button" onclick="submitForm()">Submit</button>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/puppeteer@12.0.0"></script>
-    <script>
-        import puppeteer from "puppeteer";
-        function getUserDetailsAndScrape() {
-            const name = document.getElementById('name').value;
-            const ID = document.getElementById('ID').value;
-            const gender = document.getElementById('gender').value;
-            const age = document.getElementById('age').value;
-            const height = document.getElementById('height').value;
-            const weight = document.getElementById('weight').value;
-            var Symptoms1 = document.getElementbyId('Symptoms').value;
-            var Symptoms2 = document.getElementbyId('Symptoms').value;
-            var Symptoms3 = document.getElementbyId('Symptoms').value;
-            console.log("User's Name:", name);
-            console.log("User's ID:", ID);
-            console.log("User's Gender:", gender);
-            console.log("User's Age:", age);
-            console.log("User's Height:", height);
-            console.log("User's Weight:", weight);
-            getSymptoms(symptoms1, symptoms2, symptoms3);}
-    const getSymptoms = async (symptoms1, symptoms2, symptoms3)  => {
-  // Start a Puppeteer session with:
-  // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
-  // - no default viewport (`defaultViewport: null` - website page will in full width and height)
-    const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: null,
-  });
-    const page = await browser.newPage();
-    await page.goto("http://www.diseasesdatabase.com/disease_index_a.asp", {
-    waitUntil: "domcontentloaded",});
-};
-await browser.close();
-    </script>
     <div id="response-div"></div>
 
     <script type = "module" src="app_interface.js"></script>

@@ -1,15 +1,22 @@
+import Person from "./person.js"
 export function getUserDetails() {
-    const name = document.getElementById('name').value;
-    const ID = document.getElementById('ID').value;
-    const gender = document.getElementById('gender').value;
-    const age = document.getElementById('age').value;
-    const height = document.getElementById('height').value;
-    const weight = document.getElementById('weight').value;
-
-    console.log("User's Name:", name);
-    console.log("User's ID:", ID);
-    console.log("User's Gender:", gender);
-    console.log("User's Age:", age);
-    console.log("User's Height:", height);
-    console.log("User's Weight:", weight);
+    const elements = ["name", "ID", "gender", "age", "height", "weight"];
+    const symptomsnum = 3
+    const user = {};
+    const symptoms = [];
+    
+    for (let element of elements) {
+      const value = document.getElementById(element).value;
+      console.log(`User's ${element}:`, value);
+      user[element] = value;
+    }
+  
+    for (let i = 1; i <= symptomsnum; i++) {
+      const symptom = document.getElementById(`symptom${i}`).value;
+      symptoms.push(symptom);
+    }
+  
+    console.log(user);
+    console.log(symptoms);
+    return new Person(user, symptoms);
 }

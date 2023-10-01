@@ -1,9 +1,10 @@
 import {getUserDetails} from './get_user_details.js';
-import {} from './api/generate.js';
+import getResponse from './api/generate.js';
 
-async function onSubmit(event) {
-  event.preventDefault();
+async function submitForm() {
+  user = getUserDetails()
   try {
+    getResponse(user,"whatever the web scraper got here")
     const data = await response.json();
     if (response.status !== 200) {
       throw data.error || new Error(`Request failed with status ${response.status}`);
@@ -14,10 +15,10 @@ async function onSubmit(event) {
   }
 };
 
-window.getUserDetails = getUserDetails
-window.logit = logit;
-
 function logit(e) {
   e.preventDefault();
   console.log(e)
 };
+
+window.submitForm = submitForm
+window.logit = logit;
