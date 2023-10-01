@@ -20,7 +20,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export default async function getResponse(person, search) {
+export default async function askAI(person, search) {
   try {
     const completion = await openai.chat.completions.create({
       model: "text-davinci-003",
@@ -34,5 +34,6 @@ export default async function getResponse(person, search) {
     } else {
       console.error(`Error with OpenAI API request: ${error.message}`);
     }
+    return error
   }
 }
