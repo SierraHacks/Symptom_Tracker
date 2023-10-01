@@ -49,8 +49,7 @@
         <button type="button" onclick="getUserDetails()">Submit</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/puppeteer@12.0.0"></script>
-    <script>
-        import puppeteer from "puppeteer";
+    <script type="module">
         function getUserDetailsAndScrape() {
             const name = document.getElementById('name').value;
             const ID = document.getElementById('ID').value;
@@ -58,9 +57,9 @@
             const age = document.getElementById('age').value;
             const height = document.getElementById('height').value;
             const weight = document.getElementById('weight').value;
-            var Symptoms1 = document.getElementbyId('Symptoms').value;
-            var Symptoms2 = document.getElementbyId('Symptoms').value;
-            var Symptoms3 = document.getElementbyId('Symptoms').value;
+            var Symptoms1 = document.getElementById('Symptoms').value;
+            var Symptoms2 = document.getElementById('Symptoms').value;
+            var Symptoms3 = document.getElementById('Symptoms').value;
             console.log("User's Name:", name);
             console.log("User's ID:", ID);
             console.log("User's Gender:", gender);
@@ -79,8 +78,8 @@
     const page = await browser.newPage();
     await page.goto("http://www.diseasesdatabase.com/disease_index_a.asp", {
     waitUntil: "domcontentloaded",});
+    await browser.close();
 };
-await browser.close();
     </script>
     <div id="response-div"></div>
 
