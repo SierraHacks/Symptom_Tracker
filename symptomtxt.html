@@ -42,6 +42,10 @@
         <label for="weight">What is your weight in lbs? </label>
         <input type="text" id="weight" name="weight"><br><br>
 
+        <label for="Symptoms">What symptoms do you have?</label>
+        <input type="text" id="Symptoms" name="symptoms1"><br><br>
+        <input type="text" id="Symptoms" name="symptoms2"><br><br>
+        <input type="text" id="Symptoms" name="symptoms3"><br><br>
         <button type="button" onclick="getUserDetails()">Submit</button>
     </form>
 
@@ -53,13 +57,17 @@
             const age = document.getElementById('age').value;
             const height = document.getElementById('height').value;
             const weight = document.getElementById('weight').value;
-
+            var Symptoms1 = document.getElementbyId('Symptoms').value;
+            var Symptoms2 = document.getElementbyId('Symptoms').value;
+            var Symptoms3 = document.getElementbyId('Symptoms').value;
             console.log("User's Name:", name);
             console.log("User's ID:", ID);
             console.log("User's Gender:", gender);
             console.log("User's Age:", age);
             console.log("User's Height:", height);
             console.log("User's Weight:", weight);
+
+            
         }
     </script>
 </body>
