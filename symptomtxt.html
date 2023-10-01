@@ -48,9 +48,10 @@
         <input type="text" id="Symptoms" name="symptoms3"><br><br>
         <button type="button" onclick="getUserDetails()">Submit</button>
     </form>
-
+    <script src="https://cdn.jsdelivr.net/npm/puppeteer@12.0.0"></script>
     <script>
-        function getUserDetails() {
+        import puppeteer from "puppeteer";
+        function getUserDetailsAndScrape() {
             const name = document.getElementById('name').value;
             const ID = document.getElementById('ID').value;
             const gender = document.getElementById('gender').value;
@@ -66,9 +67,20 @@
             console.log("User's Age:", age);
             console.log("User's Height:", height);
             console.log("User's Weight:", weight);
-
-            
-        }
+            getSymptoms(symptoms1, symptoms2, symptoms3);}
+    const getSymptoms = async (symptoms1, symptoms2, symptoms3)  => {
+  // Start a Puppeteer session with:
+  // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
+  // - no default viewport (`defaultViewport: null` - website page will in full width and height)
+    const browser = await puppeteer.launch({
+    headless: false,
+    defaultViewport: null,
+  });
+    const page = await browser.newPage();
+    await page.goto("http://www.diseasesdatabase.com/disease_index_a.asp", {
+    waitUntil: "domcontentloaded",});
+};
+await browser.close();
     </script>
 </body>
 </html>
