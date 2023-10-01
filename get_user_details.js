@@ -7,7 +7,6 @@ export function getUserDetails() {
 
     for (let element of elements) {
       const value = document.getElementById(element).value;
-      console.log(`User's ${element}:`, value);
       user[element] = value;
     }
   
