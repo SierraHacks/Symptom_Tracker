@@ -64,22 +64,6 @@
             console.log("User's Height:", height);
             console.log("User's Weight:", weight);
             getSymptoms(symptoms1, symptoms2, symptoms3);}
-    const getSymptoms = async (symptoms1, symptoms2, symptoms3)  => {
-  // Start a Puppeteer session with:
-  // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
-  // - no default viewport (`defaultViewport: null` - website page will in full width and height)
-    const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: null,
-  });
-    const page = await browser.newPage();
-    await page.goto("http://www.diseasesdatabase.com/disease_index_a.asp", {
-    waitUntil: "domcontentloaded",});
-};
-await browser.close();
-    </script>
-    <div id="response-div"></div>
-
     <script type = "module" src="app_interface.js"></script>
 </body>
 </html>
