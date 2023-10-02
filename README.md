@@ -1,11 +1,12 @@
 # Symptom_Tracker
 Tracks user symptoms and gives an analysis of most relevant health conditions the user may have.
 
-# installation
-run `npm install` in the terminal
-create a .env file
-enter `VITE_OPENAI_API_KEY=(whatever your api key is)` in the file
+# Installation
+(Assumes you have already cloned this, downloaded npm, and navigated to the correct directory)
+1. Create a .env file
+2. Enter `VITE_OPENAI_API_KEY=(whatever your api key is)` in the file
+3. Run `npm install` in the terminal
 
-# running
-run `npm run start` in the terminal
-for production (actual hosting and stuff) use  `npm run host`
+# Running
+Run `npm run start` in the terminal
+To build for deployment, run `npm run build` in the terminal
