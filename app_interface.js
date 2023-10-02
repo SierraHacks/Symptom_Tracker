@@ -1,9 +1,10 @@
-import {getUserDetails} from './get_user_details.js';
+import getUserDetails from './js/get_user_details.js';
+import addSymptomsBox from './js/add_symptoms_box.js';
 import askAI from './api/generate.js';
 
 const responseDiv = document.getElementById('response-div');
 async function submitForm() {
-  let user = getUserDetails()
+  let user = getUserDetails(document.querySelectorAll(".symptoms").length)
   responseDiv.innerHTML = "Loading..."
   try {
     let response = await askAI(user,"whatever the web scraper got here")
@@ -16,3 +17,4 @@ async function submitForm() {
 };
 
 window.submitForm = submitForm
+window.addSymptomsBox = addSymptomsBox

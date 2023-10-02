@@ -1,7 +1,6 @@
-import Person from "./person.js"
-export function getUserDetails() {
+import Person from "../person.js"
+export default function getUserDetails(symptomNum) {
     const elements = ["name", "ID", "gender", "age", "height", "weight"];
-    const symptomNum = 3
     const user = {};
     const symptoms = [];
 
