@@ -44,26 +44,8 @@
         <button id = "add-symptom-box-button" type="button" onclick="addSymptomsBox()">+</button><br><br><br>
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/puppeteer@12.0.0"></script>
-    <script>
-        import puppeteer from "puppeteer";
-        function getUserDetailsAndScrape() {
-            const name = document.getElementById('name').value;
-            const ID = document.getElementById('ID').value;
-            const gender = document.getElementById('gender').value;
-            const age = document.getElementById('age').value;
-            const height = document.getElementById('height').value;
-            const weight = document.getElementById('weight').value;
-            var Symptoms1 = document.getElementbyId('Symptoms').value;
-            var Symptoms2 = document.getElementbyId('Symptoms').value;
-            var Symptoms3 = document.getElementbyId('Symptoms').value;
-            console.log("User's Name:", name);
-            console.log("User's ID:", ID);
-            console.log("User's Gender:", gender);
-            console.log("User's Age:", age);
-            console.log("User's Height:", height);
-            console.log("User's Weight:", weight);
-            getSymptoms(symptoms1, symptoms2, symptoms3);}
+    <div id="response-div"></div>
+
     <script type = "module" src="app_interface.js"></script>
 </body>
 </html>

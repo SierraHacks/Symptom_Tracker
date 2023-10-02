@@ -1,7 +1,6 @@
 export default function addSymptomsBox() {
     // Find the last input box
     let lastInput = document.querySelector('.symptoms:last-of-type');
-    console.log(lastInput);
     let newInput = lastInput.cloneNode(true);
     
     // Generate a new unique ID for the cloned input box
