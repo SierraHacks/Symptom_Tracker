@@ -2,22 +2,15 @@
 <html lang="en">
 <head>
     <title>Diagnosis using Symptoms</title>
-    <style>
-        body{
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover; 
-        }
-        h2{
-        font-size: 3rem;
-        text-align: center;
-        font-family: Arial, sans-serif;
-      }
-    </style>
 </head>
 <body>
+    <div class="header">
     <center><h2 style="font-family: Arial, sans-serif; font-size: 3rem;">Diagnosis using Symptoms</h2></center>
+    </div>
+    <div class="navbar">
+      <a href="About Us.html">About Us</a>
 
+    </div>
     <form id="user-info-form">
         <label for="name">What is your full name? </label>
         <input type="text" id="name" name="name"><br><br>
@@ -49,6 +42,40 @@
         <button id = "add-symptom-box-button" type="button" onclick="addSymptomsBox()">+</button><br><br><br>
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/puppeteer@12.0.0"></script>
+    <script>
+        import puppeteer from "puppeteer";
+        function getUserDetailsAndScrape() {
+            const name = document.getElementById('name').value;
+            const ID = document.getElementById('ID').value;
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            var Symptoms1 = document.getElementbyId('Symptoms').value;
+            var Symptoms2 = document.getElementbyId('Symptoms').value;
+            var Symptoms3 = document.getElementbyId('Symptoms').value;
+            console.log("User's Name:", name);
+            console.log("User's ID:", ID);
+            console.log("User's Gender:", gender);
+            console.log("User's Age:", age);
+            console.log("User's Height:", height);
+            console.log("User's Weight:", weight);
+            getSymptoms(symptoms1, symptoms2, symptoms3);}
+    const getSymptoms = async (symptoms1, symptoms2, symptoms3)  => {
+  // Start a Puppeteer session with:
+  // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
+  // - no default viewport (`defaultViewport: null` - website page will in full width and height)
+    const browser = await puppeteer.launch({
+    headless: false,
+    defaultViewport: null,
+  });
+    const page = await browser.newPage();
+    await page.goto("http://www.diseasesdatabase.com/disease_index_a.asp", {
+    waitUntil: "domcontentloaded",});
+};
+await browser.close();
+    </script>
     <div id="response-div"></div>
 
     <script type = "module" src="app_interface.js"></script>
