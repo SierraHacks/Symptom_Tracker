@@ -23,10 +23,10 @@ const openai = new OpenAIApi(configuration);
 export default async function askAI(person, search) {
   try {
     const completion = await openai.createChatCompletion({
-      model: "text-davinci-003",
+      model: "gpt-3.5-turbo",
       messages: [{ role: 'user', content: generatePrompt(person,search) }],
     });
-    return completion.choices
+    return completion
   } catch(error) {
     throw error
   }

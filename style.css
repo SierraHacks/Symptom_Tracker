@@ -1,19 +1,20 @@
 body{
     background-color:#30d9b7;
+    margin:0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     text-align:center; 
-      }
-      h2{
-      font-size: 3rem;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h2{
+  font-size: 3rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
 .header{
 margin: auto;
 background-color: azure;
-margin-top: 30px;
 width:100%;
 padding:20px;
 text-align: center;
@@ -25,7 +26,6 @@ background: brown;
 color:white;
 text-align: center;
 font-size: 20px;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 font-weight: bold;
 word-spacing: 40px;
 }
