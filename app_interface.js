@@ -39,8 +39,14 @@ HSV: Herpes simplex virus type 1 and type 2 causes cold sores (fever blisters) a
 CHRONIC KIDNEY DISEASE
 Approximately 15% of the adult population in the US (37 million people or 1 in 7 adults) have chronic kidney disease (CKD). Interestingly, up to 90% of adults with CKD do not know they have the condition, including 40% of adults with severe CKD.
 
+CONJUCTIVITS/PINK EYE
+Conjunctivitis, an inflammation of the transparent membrane (conjunctiva) that lines your eyelids and part of your eyeballs, has several possible causes. It could be a bacterial or viral infection, an allergic reaction to pollen or animal dander, or a result of chemical irritants (smoke, chlorine, lens solution, etc.).
+
 MENTAL ILLNESSES
 More than 50% of Americans will be diagnosed with a mental disorder at some point in their life. Experts estimate that 1 in 5 Americans experiences a mental illness in any given year. Also, 1 in 25 Americans is living with a serious mental illness like bipolar disorder, schizophrenia, or major depression.`
+
+
+
 const responseDiv = document.getElementById('response-div');
 async function submitForm() {
   let user = getUserDetails(document.querySelectorAll(".symptoms").length)
